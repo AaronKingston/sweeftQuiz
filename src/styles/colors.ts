@@ -1,0 +1,15 @@
+export const enum colors {
+  transparent = 'transparent',
+  backgroundColor = '#170738',
+  landingGreen = '#3cc0bd',
+  primaryViolet = '#5220b1',
+  secondaryDarkViolet = '#3f2c65',
+  secondaryGreen = '#9dd838',
+  secondaryPink = '#f27cac',
+  neutralGreen = '#cff58d',
+  neutralPink = '#fdc3db',
+  danger = '#dc3545',
+  dark = '#212529',
+  light = '#f8f9fa',
+  warning = '#ffc107',
+}

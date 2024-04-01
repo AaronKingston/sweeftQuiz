@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="10.721" height="21.442" viewBox="0 0 10.721 21.442">
+  <g id="thermometer" transform="translate(-128)">
+    <g id="Group_2" data-name="Group 2" transform="translate(128)">
+      <g id="Group_1" data-name="Group 1">
+        <path id="Path_1" data-name="Path 1"
+          d="M129.787,12.086V3.574a3.574,3.574,0,0,1,7.147,0v8.512a5.36,5.36,0,1,1-7.147,0Zm3.574,7.569a3.574,3.574,0,0,0,2.382-6.238l-.6-.533V3.574a1.787,1.787,0,0,0-3.574,0v9.311l-.6.533a3.574,3.574,0,0,0,2.382,6.238Z"
+          transform="translate(-128 0)" fill="#3f2c65" />
+      </g>
+    </g>
+    <g id="Group_4" data-name="Group 4" transform="translate(132.467 7.147)">
+      <g id="Group_3" data-name="Group 3">
+        <rect id="Rectangle_11" data-name="Rectangle 11" width="1.787" height="10.721" />
+      </g>
+    </g>
+    <g id="Group_6" data-name="Group 6" transform="translate(130.527 13.248)">
+      <g id="Group_5" data-name="Group 5" transform="translate(0 0)">
+        <ellipse id="Ellipse_2" data-name="Ellipse 2" cx="2.5" cy="3" rx="2.5" ry="3"
+          transform="translate(0.407 -0.381)" />
+      </g>
+    </g>
+  </g>
+</svg>
