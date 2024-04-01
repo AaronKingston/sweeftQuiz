@@ -10,10 +10,13 @@ import getStyleObj from './style';
 import shuffle from '../../utils/shuffle';
 import {colors} from '../../styles/colors';
 
+import {TouchableOpacity} from 'react-native';
+import {LeftArrow} from '../../assets/SVG';
+
 const GameScreen = () => {
   const styles = getStyleObj();
   const {params} = useRoute();
-  const {navigate} = useNavigation();
+  const navigation = useNavigation();
   const dispatch = useDispatch();
   const [questionIndex, setQuestionIndex] = useState(0);
   const [allAnswers, setAllAnswers] = useState([]);
@@ -39,6 +42,20 @@ const GameScreen = () => {
     answers();
   }, [questionIndex, questionsLoading]);
 
+  useEffect(() => {
+    navigation.setOptions({
+      headerLeft: () => (
+        <TouchableOpacity
+          style={{marginLeft: 12}}
+          onPress={() => {
+            navigation.navigate('StartScreen');
+          }}>
+          <LeftArrow fill={colors.light} />
+        </TouchableOpacity>
+      ),
+    });
+  }, []);
+
   const handleNextQeustion = useCallback(() => {
     if (questionIndex + 1 < questions?.length) {
       if (
@@ -57,7 +74,7 @@ const GameScreen = () => {
           incorrectAnswers += 1;
         }
       });
-      navigate('GameOverScreen', {
+      navigation.navigate('GameOverScreen', {
         correctAnswers: correctAnswers,
         incorrectAnswers: incorrectAnswers,
       });

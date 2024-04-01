@@ -1,22 +1,14 @@
 import {NavigationContainer} from '@react-navigation/native';
-import {createStackNavigator} from '@react-navigation/stack'; //////////////////////////////////
-import {LeftArrow} from '../assets/SVG';
-import {TouchableOpacity, View} from 'react-native';
+import {createStackNavigator} from '@react-navigation/stack';
 import GameOverScreen from '../screens/GameOverScreen';
 import GameScreen from '../screens/GameScreen';
 import MenuScreen from '../screens/MenuScreen';
 import StartScreen from '../screens/StartScreen';
 import {colors} from '../styles/colors';
-//import {useNavigation} from '@react-navigation/native';
-
-interface Props {
-  navigation: any;
-}
 
 const {Navigator, Screen} = createStackNavigator();
 
 const Routes: React.FC = () => {
-  //const {navigate} = useNavigation();
   return (
     <NavigationContainer>
       <Navigator>
@@ -41,15 +33,6 @@ const Routes: React.FC = () => {
             headerShown: true,
             title: 'Game',
             headerTitleAlign: 'center',
-            headerLeft: () => (
-              <TouchableOpacity
-                style={{marginLeft: 12}}
-                onPress={() => {
-                  navigate('StartScreen');
-                }}>
-                <LeftArrow fill={colors.light} />
-              </TouchableOpacity>
-            ),
             headerStyle: {
               backgroundColor: colors.backgroundColor,
             },
