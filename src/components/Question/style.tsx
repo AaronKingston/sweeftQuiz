@@ -3,7 +3,6 @@ import {colors} from '../../styles/colors';
 
 const getStyleObj = () => {
   return StyleSheet.create({
-    //questionContainer: {},
     question: {
       marginTop: 36,
       paddingHorizontal: 40,

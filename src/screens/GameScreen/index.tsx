@@ -54,13 +54,11 @@ const GameScreen = () => {
         </TouchableOpacity>
       ),
       title: (
-        <View style={styles.questionPagination}>
-          <Text style={styles.paginationText}>
-            Question{' '}
-            <Text style={styles.currentPagination}>{questionIndex + 1}</Text> 10
-            {/* Yeah i know its hardcoded :( */}
-          </Text>
-        </View>
+        <Text style={styles.paginationText}>
+          Question{' '}
+          <Text style={styles.currentPagination}>{questionIndex + 1}</Text> 10
+          {/* Yeah i know its hardcoded :( */}
+        </Text>
       ),
     });
   }, [questionIndex]);
