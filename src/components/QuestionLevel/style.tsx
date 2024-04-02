@@ -6,7 +6,7 @@ const getStyleObj = () => {
     levelContainer: {
       paddingVertical: 8,
       paddingHorizontal: 16,
-      borderWidth: 3,
+      borderWidth: 2,
       borderColor: colors.secondaryPink,
       borderRadius: 17,
       flexDirection: 'row',

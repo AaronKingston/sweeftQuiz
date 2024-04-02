@@ -31,7 +31,6 @@ const Routes: React.FC = () => {
           component={GameScreen}
           options={{
             headerShown: true,
-            title: 'Game',
             headerTitleAlign: 'center',
             headerStyle: {
               backgroundColor: colors.backgroundColor,

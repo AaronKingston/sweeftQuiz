@@ -1,5 +1,5 @@
 import {useCallback, useEffect, useState} from 'react';
-import {ActivityIndicator, View} from 'react-native';
+import {ActivityIndicator, View, Text} from 'react-native';
 import {useDispatch, useSelector} from 'react-redux';
 import {useNavigation, useRoute} from '@react-navigation/native';
 
@@ -53,8 +53,17 @@ const GameScreen = () => {
           <LeftArrow fill={colors.light} />
         </TouchableOpacity>
       ),
+      title: (
+        <View style={styles.questionPagination}>
+          <Text style={styles.paginationText}>
+            Question{' '}
+            <Text style={styles.currentPagination}>{questionIndex + 1}</Text> 10
+            {/* Yeah i know its hardcoded :( */}
+          </Text>
+        </View>
+      ),
     });
-  }, []);
+  }, [questionIndex]);
 
   const handleNextQeustion = useCallback(() => {
     if (questionIndex + 1 < questions?.length) {
@@ -120,11 +129,7 @@ const GameScreen = () => {
   return (
     <View style={styles.mainContainer}>
       <QuestionLevel level={questions?.[questionIndex]?.difficulty} />
-      <Question
-        index={questionIndex}
-        maxQuestions={questions?.length}
-        question={questions?.[questionIndex]?.question}
-      />
+      <Question question={questions?.[questionIndex]?.question} />
       <View style={styles.answersContainer}>
         {allAnswers?.map(item => answerCallback(item))}
       </View>
