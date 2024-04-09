@@ -127,7 +127,10 @@ const GameScreen = () => {
   return (
     <View style={styles.mainContainer}>
       <QuestionLevel level={questions?.[questionIndex]?.difficulty} />
-      <Question question={questions?.[questionIndex]?.question} />
+      <Question
+        category={questions?.[questionIndex]?.category}
+        question={questions?.[questionIndex]?.question}
+      />
       <View style={styles.answersContainer}>
         {allAnswers?.map(item => answerCallback(item))}
       </View>

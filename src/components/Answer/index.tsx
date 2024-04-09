@@ -2,7 +2,6 @@ import {View, Text, TouchableOpacity} from 'react-native';
 
 import getStyleObj from './style';
 import {useCallback, useEffect, useState} from 'react';
-import {colors} from 'styles/colors';
 import {CheckFalse, CheckTrue} from '../../assets/SVG';
 import entitiesParser from '../../utils/entitiesParser';
 

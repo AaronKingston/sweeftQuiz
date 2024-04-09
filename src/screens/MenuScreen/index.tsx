@@ -5,7 +5,7 @@ import {useNavigation} from '@react-navigation/native';
 import {Portal} from 'react-native-portalize';
 import {useModalize, Modalize} from 'react-native-modalize';
 
-import {getCategories, getQuestions} from '../../store/slices/quizSlice';
+import {getCategories} from '../../store/slices/quizSlice';
 import {PrimaryButton, SecondaryButton} from '../../components';
 
 import getStyleObj from './style';

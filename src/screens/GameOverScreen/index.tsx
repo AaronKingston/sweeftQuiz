@@ -6,7 +6,6 @@ import {PrimaryButton} from '../../components';
 import getStyleObj from './style';
 import {CheckFalse, CheckTrue} from '../../assets/SVG';
 import {colors} from '../../styles/colors';
-//import {TrueCheck} from '../../assets/SVG';
 
 const GameOverScreen = () => {
   const styles = getStyleObj();
@@ -18,7 +17,6 @@ const GameOverScreen = () => {
   return (
     <View style={styles.mainContainer}>
       <View style={styles.resultBoard}>
-        {/* <Text style={styles.text}>RESULT</Text> */}
         <View style={styles.score}>
           <View>
             <Text style={[styles.text, {marginBottom: 6}]}>CORRECT</Text>

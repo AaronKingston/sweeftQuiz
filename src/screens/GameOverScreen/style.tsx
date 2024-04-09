@@ -33,7 +33,6 @@ const getStyleObj = () => {
       flexDirection: 'row',
       justifyContent: 'space-evenly',
       alignItems: 'center',
-      //height: 40,
     },
   });
 };
