@@ -1,9 +1,10 @@
+import 'react-native-gesture-handler';
 import {NavigationContainer} from '@react-navigation/native';
 import {createStackNavigator} from '@react-navigation/stack';
 import GameOverScreen from '../screens/GameOverScreen';
 import GameScreen from '../screens/GameScreen';
 import MenuScreen from '../screens/MenuScreen';
-import StartScreen from '../screens/StartScreen';
+import StartStack from '../screens/StartStack';
 import {colors} from '../styles/colors';
 
 const {Navigator, Screen} = createStackNavigator();
@@ -13,17 +14,28 @@ const Routes: React.FC = () => {
     <NavigationContainer>
       <Navigator>
         <Screen
-          name="StartScreen"
-          component={StartScreen}
+          name="StartStack"
+          component={StartStack}
           options={{
             headerShown: false,
+            title: '',
           }}
         />
         <Screen
           name="MenuScreen"
           component={MenuScreen}
           options={{
-            headerShown: false,
+            headerShown: true,
+            title: 'MENU',
+            headerTitleAlign: 'center',
+            headerStyle: {
+              backgroundColor: colors.backgroundColor,
+            },
+            headerTitleStyle: {
+              color: colors.light,
+              textAlign: 'center',
+              fontSize: 16,
+            },
           }}
         />
         <Screen

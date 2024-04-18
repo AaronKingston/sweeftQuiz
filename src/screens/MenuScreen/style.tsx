@@ -10,9 +10,7 @@ const getStyleObj = () => {
       padding: 40,
     },
     logoContainer: {
-      justifyContent: 'center',
-      alignItems: 'center',
-      marginBottom: 50,
+      marginBottom: 150,
       height: 200,
     },
     buttonContainer: {
@@ -25,7 +23,7 @@ const getStyleObj = () => {
     },
     primaryButton: {
       marginHorizontal: 40,
-      marginTop: 40,
+      marginTop: 60,
     },
     sheetButton: {
       margin: 8,

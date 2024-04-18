@@ -1,3 +1,4 @@
+import 'react-native-gesture-handler';
 import {useCallback, useState, useEffect} from 'react';
 import {View, TouchableOpacity, Text} from 'react-native';
 import {useDispatch, useSelector} from 'react-redux';
@@ -9,7 +10,7 @@ import {getCategories} from '../../store/slices/quizSlice';
 import {PrimaryButton, SecondaryButton} from '../../components';
 
 import getStyleObj from './style';
-import {SweeftLight} from '../../assets/SVG';
+import {SweeftLight, LeftArrow} from '../../assets/SVG';
 import {colors} from '../../styles/colors';
 
 interface RenderItemType {
@@ -25,7 +26,7 @@ const difficultyData = [
 const MenuScreen: React.FC = () => {
   const styles = getStyleObj();
   const dispatch = useDispatch();
-  const {navigate} = useNavigation();
+  const {navigate, setOptions} = useNavigation();
 
   const [modalType, setModalType] = useState();
   const [categoryButton, setCategoryButton] = useState({
@@ -42,6 +43,17 @@ const MenuScreen: React.FC = () => {
 
   useEffect(() => {
     dispatch(getCategories());
+    setOptions({
+      headerLeft: () => (
+        <TouchableOpacity
+          style={{marginLeft: 12}}
+          onPress={() => {
+            navigate('StartStack');
+          }}>
+          <LeftArrow fill={colors.light} />
+        </TouchableOpacity>
+      ),
+    });
   }, []);
 
   const renderItem = ({item}: RenderItemType) => (

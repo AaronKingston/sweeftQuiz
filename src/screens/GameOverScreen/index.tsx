@@ -38,7 +38,7 @@ const GameOverScreen = () => {
         name="menu"
         color={colors.backgroundColor}
         onPress={() => {
-          navigate('StartScreen');
+          navigate('StartStack');
         }}
       />
     </View>

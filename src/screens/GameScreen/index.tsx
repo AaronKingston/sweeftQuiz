@@ -16,7 +16,7 @@ import {LeftArrow} from '../../assets/SVG';
 const GameScreen = () => {
   const styles = getStyleObj();
   const {params} = useRoute();
-  const navigation = useNavigation();
+  const {navigate, setOptions} = useNavigation();
   const dispatch = useDispatch();
   const [questionIndex, setQuestionIndex] = useState(0);
   const [allAnswers, setAllAnswers] = useState([]);
@@ -43,12 +43,12 @@ const GameScreen = () => {
   }, [questionIndex, questionsLoading]);
 
   useEffect(() => {
-    navigation.setOptions({
+    setOptions({
       headerLeft: () => (
         <TouchableOpacity
           style={{marginLeft: 12}}
           onPress={() => {
-            navigation.navigate('StartScreen');
+            navigate('StartStack');
           }}>
           <LeftArrow fill={colors.light} />
         </TouchableOpacity>
@@ -81,7 +81,7 @@ const GameScreen = () => {
           incorrectAnswers += 1;
         }
       });
-      navigation.navigate('GameOverScreen', {
+      navigate('GameOverScreen', {
         correctAnswers: correctAnswers,
         incorrectAnswers: incorrectAnswers,
       });
