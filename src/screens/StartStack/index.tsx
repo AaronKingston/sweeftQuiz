@@ -1,30 +1,30 @@
 import 'react-native-gesture-handler';
 // import {View} from 'react-native';
 // import getStyleObj from './style';
-import {colors} from '../../styles/colors';
 //import {useNavigation} from '@react-navigation/native';
 // import {NavigationContainer} from '@react-navigation/native';
 import {createDrawerNavigator} from '@react-navigation/drawer';
 import StartScreen from '../StartScreen';
 import SettingsScreen from '../SettingsScreen';
 import {Settings, Home} from '../../assets/SVG';
+import {useAppContext} from '../../hooks/useAppContext';
 
 const {Navigator, Screen} = createDrawerNavigator();
 
 const StartStack: React.FC = () => {
   //const styles = getStyleObj();
-
+  const {Colors} = useAppContext();
   return (
     <Navigator
       initialRouteName="StartScreen"
       screenOptions={{
-        headerStyle: {backgroundColor: colors.backgroundColor},
-        headerTintColor: colors.light,
-        sceneContainerStyle: {backgroundColor: colors.neutralPink},
-        drawerContentStyle: {backgroundColor: colors.primaryViolet},
-        drawerInactiveTintColor: colors.light,
-        drawerActiveTintColor: colors.backgroundColor,
-        drawerActiveBackgroundColor: colors.light,
+        headerStyle: {backgroundColor: Colors.backgroundColor},
+        headerTintColor: Colors.light,
+        sceneContainerStyle: {backgroundColor: Colors.neutralPink},
+        drawerContentStyle: {backgroundColor: Colors.primaryViolet},
+        drawerInactiveTintColor: Colors.light,
+        drawerActiveTintColor: Colors.backgroundColor,
+        drawerActiveBackgroundColor: Colors.light,
       }}>
       <Screen
         name="StartScreen"
@@ -34,10 +34,10 @@ const StartStack: React.FC = () => {
           title: 'HOME',
           headerTitleAlign: 'center',
           headerStyle: {
-            backgroundColor: colors.backgroundColor,
+            backgroundColor: Colors.backgroundColor,
           },
           headerTitleStyle: {
-            color: colors.light,
+            color: Colors.light,
             textAlign: 'center',
             fontSize: 16,
           },
@@ -52,10 +52,10 @@ const StartStack: React.FC = () => {
           title: 'SETTINGS',
           headerTitleAlign: 'center',
           headerStyle: {
-            backgroundColor: colors.backgroundColor,
+            backgroundColor: Colors.backgroundColor,
           },
           headerTitleStyle: {
-            color: colors.light,
+            color: Colors.light,
             textAlign: 'center',
             fontSize: 16,
           },

@@ -1,13 +1,14 @@
 import {StyleSheet} from 'react-native';
-import {colors} from '../../styles/colors';
+import {useAppContext} from '../../hooks/useAppContext';
 
 const getStyleObj = () => {
+  const {Colors} = useAppContext();
   return StyleSheet.create({
     levelContainer: {
       paddingVertical: 8,
       paddingHorizontal: 16,
       borderWidth: 2,
-      borderColor: colors.secondaryPink,
+      borderColor: Colors.secondaryPink,
       borderRadius: 17,
       flexDirection: 'row',
       justifyContent: 'space-between',
@@ -16,7 +17,7 @@ const getStyleObj = () => {
       marginTop: 20,
     },
     levelText: {
-      color: colors.light,
+      color: Colors.light,
       fontSize: 16,
     },
   });

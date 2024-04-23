@@ -1,11 +1,12 @@
 import {StyleSheet} from 'react-native';
-import {colors} from '../../styles/colors';
+import {useAppContext} from '../../hooks/useAppContext';
 
 const getStyleObj = () => {
+  const {Colors} = useAppContext();
   return StyleSheet.create({
     mainContainer: {
       flex: 1,
-      backgroundColor: colors.backgroundColor,
+      backgroundColor: Colors.backgroundColor,
     },
     settingContainer: {
       padding: 36,
@@ -13,10 +14,10 @@ const getStyleObj = () => {
       alignItems: 'center',
       justifyContent: 'space-between',
       borderBottomWidth: StyleSheet.hairlineWidth,
-      borderColor: colors.light,
+      borderColor: Colors.light,
     },
     primaryText: {
-      color: colors.light,
+      color: Colors.light,
       fontSize: 18,
     },
   });

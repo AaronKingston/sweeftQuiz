@@ -1,7 +1,8 @@
 import {StyleSheet} from 'react-native';
-import {colors} from '../../styles/colors';
+import {useAppContext} from '../../hooks/useAppContext';
 
 const getStyleObj = () => {
+  const {Colors} = useAppContext();
   return StyleSheet.create({
     question: {
       marginTop: 36,
@@ -9,12 +10,12 @@ const getStyleObj = () => {
     },
     headerText: {
       fontSize: 22,
-      color: colors.secondaryPink,
+      color: Colors.secondaryPink,
       marginBottom: 18,
       fontWeight: 'bold',
     },
     questionText: {
-      color: colors.light,
+      color: Colors.light,
       fontSize: 16,
     },
   });

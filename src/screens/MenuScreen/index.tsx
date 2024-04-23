@@ -10,8 +10,8 @@ import {getCategories} from '../../store/slices/quizSlice';
 import {PrimaryButton, SecondaryButton} from '../../components';
 
 import getStyleObj from './style';
-import {SweeftLight, LeftArrow} from '../../assets/SVG';
-import {colors} from '../../styles/colors';
+import {SweeftLogo, LeftArrow} from '../../assets/SVG';
+import {useAppContext} from '../../hooks/useAppContext';
 
 interface RenderItemType {
   name: string;
@@ -24,6 +24,7 @@ const difficultyData = [
 ];
 
 const MenuScreen: React.FC = () => {
+  const {Colors} = useAppContext();
   const styles = getStyleObj();
   const dispatch = useDispatch();
   const {navigate, setOptions} = useNavigation();
@@ -50,7 +51,7 @@ const MenuScreen: React.FC = () => {
           onPress={() => {
             navigate('StartStack');
           }}>
-          <LeftArrow fill={colors.light} />
+          <LeftArrow fill={Colors.light} />
         </TouchableOpacity>
       ),
     });
@@ -84,20 +85,20 @@ const MenuScreen: React.FC = () => {
   return (
     <View style={styles.mainContainer}>
       <View style={styles.logoContainer}>
-        <SweeftLight />
+        <SweeftLogo fill={Colors.light} />
       </View>
       <View style={styles.buttonContainer}>
         <SecondaryButton
           onPress={() => openModalHandler('DIFFICULTY')}
           customStyle={styles.secondaryButton}
           name={difficultyButton.name}
-          color={colors.light}
+          color={Colors.light}
         />
         <SecondaryButton
           onPress={() => openModalHandler('CATEGORY')}
           customStyle={styles.secondaryButton}
           name={categoryButton.name}
-          color={colors.light}
+          color={Colors.light}
         />
       </View>
       <PrimaryButton
@@ -129,7 +130,7 @@ const MenuScreen: React.FC = () => {
                   textAlign: 'center',
                   fontSize: 20,
                   fontWeight: 'bold',
-                  color: colors.backgroundColor,
+                  color: Colors.backgroundColor,
                 }}>
                 {modalType}
               </Text>

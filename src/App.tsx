@@ -6,17 +6,17 @@ import {store} from './store/store';
 
 import {Host} from 'react-native-portalize';
 import {GestureHandlerRootView} from 'react-native-gesture-handler';
-import {ThemeContextProvider} from './store/context/theme-context';
+import AppThemeProviderWrapper from './store/ThemeContext';
 
 function App(): React.JSX.Element {
   return (
     <GestureHandlerRootView style={{flex: 1}}>
       <Host>
-        {/* <ThemeContextProvider> */}
-        <Provider store={store}>
-          <Routes />
-        </Provider>
-        {/* </ThemeContextProvider> */}
+        <AppThemeProviderWrapper>
+          <Provider store={store}>
+            <Routes />
+          </Provider>
+        </AppThemeProviderWrapper>
       </Host>
     </GestureHandlerRootView>
   );

@@ -5,11 +5,11 @@ import GameOverScreen from '../screens/GameOverScreen';
 import GameScreen from '../screens/GameScreen';
 import MenuScreen from '../screens/MenuScreen';
 import StartStack from '../screens/StartStack';
-import {colors} from '../styles/colors';
+import {useAppContext} from '../hooks/useAppContext';
 
 const {Navigator, Screen} = createStackNavigator();
-
 const Routes: React.FC = () => {
+  const {Colors} = useAppContext();
   return (
     <NavigationContainer>
       <Navigator>
@@ -29,10 +29,10 @@ const Routes: React.FC = () => {
             title: 'MENU',
             headerTitleAlign: 'center',
             headerStyle: {
-              backgroundColor: colors.backgroundColor,
+              backgroundColor: Colors.backgroundColor,
             },
             headerTitleStyle: {
-              color: colors.light,
+              color: Colors.light,
               textAlign: 'center',
               fontSize: 16,
             },
@@ -45,10 +45,10 @@ const Routes: React.FC = () => {
             headerShown: true,
             headerTitleAlign: 'center',
             headerStyle: {
-              backgroundColor: colors.backgroundColor,
+              backgroundColor: Colors.backgroundColor,
             },
             headerTitleStyle: {
-              color: colors.light,
+              color: Colors.light,
             },
           }}
         />

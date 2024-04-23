@@ -1,24 +1,25 @@
 import {StyleSheet} from 'react-native';
-import {colors} from '../../styles/colors';
+import {useAppContext} from '../../hooks/useAppContext';
 
 const getStyleObj = () => {
+  const {Colors} = useAppContext();
   return StyleSheet.create({
     mainContainer: {
       flex: 1,
-      backgroundColor: colors.backgroundColor,
+      backgroundColor: Colors.backgroundColor,
       justifyContent: 'center',
       padding: 40,
     },
     logoContainer: {
       marginBottom: 150,
-      height: 200,
+      height: 120,
     },
     buttonContainer: {
       justifyContent: 'space-between',
     },
     secondaryButton: {
-      backgroundColor: colors.transparent,
-      borderColor: colors.secondaryPink,
+      backgroundColor: Colors.transparent,
+      borderColor: Colors.secondaryPink,
       marginTop: 8,
     },
     primaryButton: {
@@ -30,7 +31,7 @@ const getStyleObj = () => {
     },
     sheetButtonText: {
       fontSize: 20,
-      color: colors.backgroundColor,
+      color: Colors.backgroundColor,
     },
   });
 };

@@ -8,12 +8,13 @@ import {Answer, PrimaryButton, Question, QuestionLevel} from '../../components';
 
 import getStyleObj from './style';
 import shuffle from '../../utils/shuffle';
-import {colors} from '../../styles/colors';
 
 import {TouchableOpacity} from 'react-native';
 import {LeftArrow} from '../../assets/SVG';
+import {useAppContext} from '../../hooks/useAppContext';
 
 const GameScreen = () => {
+  const {Colors} = useAppContext();
   const styles = getStyleObj();
   const {params} = useRoute();
   const {navigate, setOptions} = useNavigation();
@@ -50,7 +51,7 @@ const GameScreen = () => {
           onPress={() => {
             navigate('StartStack');
           }}>
-          <LeftArrow fill={colors.light} />
+          <LeftArrow fill={Colors.light} />
         </TouchableOpacity>
       ),
       title: (
@@ -115,11 +116,11 @@ const GameScreen = () => {
       <View
         style={{
           flex: 1,
-          backgroundColor: colors.backgroundColor,
+          backgroundColor: Colors.backgroundColor,
           justifyContent: 'center',
           alignContent: 'center',
         }}>
-        <ActivityIndicator size={'large'} color={colors.secondaryPink} />
+        <ActivityIndicator size={'large'} color={Colors.secondaryPink} />
       </View>
     );
   }

@@ -1,11 +1,12 @@
 import {StyleSheet} from 'react-native';
-import {colors} from '../../styles/colors';
+import {useAppContext} from '../../hooks/useAppContext';
 
 const getStyleObj = () => {
+  const {Colors} = useAppContext();
   return StyleSheet.create({
     mainContainer: {
       flex: 1,
-      backgroundColor: colors.backgroundColor,
+      backgroundColor: Colors.backgroundColor,
       justifyContent: 'center',
       padding: 40,
     },

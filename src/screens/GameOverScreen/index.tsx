@@ -5,9 +5,10 @@ import {PrimaryButton} from '../../components';
 
 import getStyleObj from './style';
 import {CheckFalse, CheckTrue} from '../../assets/SVG';
-import {colors} from '../../styles/colors';
+import {useAppContext} from '../../hooks/useAppContext';
 
 const GameOverScreen = () => {
+  const {Colors} = useAppContext();
   const styles = getStyleObj();
   const {navigate} = useNavigation();
   const {params} = useRoute();
@@ -36,7 +37,7 @@ const GameOverScreen = () => {
       </View>
       <PrimaryButton
         name="menu"
-        color={colors.backgroundColor}
+        color={Colors.backgroundColor}
         onPress={() => {
           navigate('StartStack');
         }}

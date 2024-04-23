@@ -1,20 +1,21 @@
 import {StyleSheet} from 'react-native';
-import {colors} from '../../styles/colors';
+import {useAppContext} from '../../hooks/useAppContext';
 
 const getStyleObj = () => {
+  const {Colors} = useAppContext();
   return StyleSheet.create({
     answerContainer: {
       marginTop: 16,
       paddingVertical: 8,
       borderWidth: 1,
-      borderColor: colors.secondaryPink,
+      borderColor: Colors.secondaryPink,
       paddingHorizontal: 16,
       flexDirection: 'row',
       justifyContent: 'space-between',
       alignItems: 'center',
     },
     answerText: {
-      color: colors.light,
+      color: Colors.light,
       fontSize: 16,
       width: '80%',
     },
@@ -23,7 +24,7 @@ const getStyleObj = () => {
       height: 26,
       borderRadius: 2,
       borderWidth: 1,
-      borderColor: colors.neutralPink,
+      borderColor: Colors.neutralPink,
     },
   });
 };

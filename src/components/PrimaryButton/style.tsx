@@ -1,18 +1,19 @@
 import {StyleSheet} from 'react-native';
-import {colors} from '../../styles/colors';
+import {useAppContext} from '../../hooks/useAppContext';
 
 const getStyleObj = () => {
+  const {Colors} = useAppContext();
   return StyleSheet.create({
     button: {
       paddingVertical: 20,
       paddingHorizontal: 25,
-      backgroundColor: colors.landingGreen,
+      backgroundColor: Colors.landingGreen,
       borderRadius: 18,
       justifyContent: 'center',
       alignContent: 'center',
     },
     text: {
-      color: colors.backgroundColor,
+      color: Colors.backgroundColor,
       textAlign: 'center',
     },
   });

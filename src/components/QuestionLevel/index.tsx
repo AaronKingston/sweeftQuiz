@@ -3,25 +3,26 @@ import {View, Text, TouchableOpacity} from 'react-native';
 import getStyleObj from './style';
 import {Thermometer} from '../../assets/SVG';
 import {useMemo} from 'react';
-import {colors} from '../../styles/colors';
+import {useAppContext} from '../../hooks/useAppContext';
 
 interface Props {
   level: string;
 }
 
 const QuestionLevel: React.FC<Props> = ({level}) => {
+  const {Colors} = useAppContext();
   const styles = getStyleObj();
 
   const generatedColor = useMemo(() => {
     switch (level) {
       case 'hard':
-        return colors.danger;
+        return Colors.danger;
       case 'medium':
-        return colors.warning;
+        return Colors.warning;
       case 'easy':
-        return colors.secondaryGreen;
+        return Colors.secondaryGreen;
       default:
-        return colors.light;
+        return Colors.light;
     }
   }, [level]);
 

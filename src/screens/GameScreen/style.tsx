@@ -1,11 +1,12 @@
 import {StyleSheet} from 'react-native';
-import {colors} from '../../styles/colors';
+import {useAppContext} from '../../hooks/useAppContext';
 
 const getStyleObj = () => {
+  const {Colors} = useAppContext();
   return StyleSheet.create({
     mainContainer: {
       flex: 1,
-      backgroundColor: colors.backgroundColor,
+      backgroundColor: Colors.backgroundColor,
     },
     answersContainer: {
       paddingHorizontal: 36,
@@ -20,11 +21,11 @@ const getStyleObj = () => {
       alignItems: 'center',
     },
     paginationText: {
-      color: colors.light,
+      color: Colors.light,
       fontSize: 16,
     },
     currentPagination: {
-      color: colors.light,
+      color: Colors.light,
       fontSize: 28,
       fontWeight: '900',
     },
